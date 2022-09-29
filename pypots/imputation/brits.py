@@ -517,7 +517,7 @@ class BRITS(BaseNNImputer):
 
         training_set = DatasetForBRITS(train_X)  # time_gaps is necessary for BRITS
         training_loader = DataLoader(
-            training_set, batch_size=self.batch_size, shuffle=True
+            training_set, batch_size=self.batch_size, shuffle=False
         )
 
         if val_X is None:
