@@ -18,7 +18,7 @@ def cal_mae(inputs, target, mask=None):
     )
     lib = np if isinstance(inputs, np.ndarray) else torch
     if mask is not None:
-        return lib.sum(lib.abs(inputs - target) * mask) / (lib.sum(mask) + 1e-9)
+        return lib.sum(lib.abs(inputs - target) * mask) / (lib.sum(mask))
     else:
         return lib.mean(lib.abs(inputs - target))
 
@@ -31,7 +31,7 @@ def cal_mse(inputs, target, mask=None):
     )
     lib = np if isinstance(inputs, np.ndarray) else torch
     if mask is not None:
-        return lib.sum(lib.square(inputs - target) * mask) / (lib.sum(mask) + 1e-9)
+        return lib.sum(lib.square(inputs - target) * mask) / (lib.sum(mask))
     else:
         return lib.mean(lib.square(inputs - target))
 
