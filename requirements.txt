@@ -3,7 +3,6 @@ numpy
 scikit_learn
 scipy
 torch >= 1.10
-torch_scatter
 tensorboard
 pandas
 pycorruptor
